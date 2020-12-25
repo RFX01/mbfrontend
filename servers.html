@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="MadBomber.NET - Server List">
     <meta name="author" content="RFX">
-    <title>MadBomber.NET - Home</title>
+    <script src="js/servers.js"></script>
+    <title>MadBomber.NET - Server List</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
@@ -17,10 +18,10 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/index.html">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/servers.html">Server List</a>
           </li>
           <li class="nav-item">
@@ -31,23 +32,22 @@
     </nav>
 
     <main role="main" class="container" style="margin-top:65px">
-      <h1>Welcome to MadBomber.NET</h1>
-      <p class="lead">
-        Work-in-progress Website for the Online Multiplayer Action Maze Game MadBomber.
-      </p>
+      <p class="lead">Online Servers: <a id="mbf-server-count"><b>Loading...</b></p></p>
       <p>
-        The game is currently being tested within a small group of testers. There are no public builds yet.
-        Since development and design is done by a single person, progress is going to be slow and updates can be fairly infrequent.
-        Public Builds will be released when the game is ready for it.
-      </p>
-      <p>
-        For now, the only thing that can be found on this Website is the public List of all currently running Gameservers.
-        This will eventually be expanded with the Repository, which will be a place for User-created Maps and Game Types.
-        Submission will not be handled through this Website though, this is simply a read-only frontend for the MadBomber API.
-      </p>
-      <p>
-        If you would like to help out with Playtesting MadBomber, feel free to join the <a href="https://discord.gg/zmYnwYBvRV">MadBomber Discord</a>.
-        Simply follow the steps in the <mark>#getting_started</mark> channel to get access to the current development builds.
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Region</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Map Count</th>
+                  <th scope="col">Game Type Count</th>
+                  <th scope="col">Players</th>
+                </tr>
+              </thead>
+              <tbody id="mbf-server-list">
+              </tbody>
+            </table>
       </p>
     </main>
 
