@@ -35,7 +35,7 @@
         <h1 id="mbf-map-name">Loading...</h1>
         <div id="mbf-map-image"></div>
         <div class="col-12">
-            
+
         </div>
     </main>
 
@@ -44,6 +44,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
+        const urlParams = new URLSearchParams(queryString);
         loadMap(urlParams.get('id'));
     </script>
   </body>
