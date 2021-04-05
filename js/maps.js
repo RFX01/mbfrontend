@@ -45,6 +45,7 @@ var infoRequest = new XMLHttpRequest();
 infoRequest.onload = function () {
     var data = JSON.parse(this.response)
     $("#mbf-map-name").html(data.name);
+    $('#mbf-map-uuid').html(data.uuid);
     $("#mbf-map-description").html(data.description);
     $("#mbf-map-image").html('<img class="img-fluid" src="' + data.image + '">');
 }
