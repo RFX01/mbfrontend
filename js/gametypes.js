@@ -6,7 +6,7 @@ function GameType(id, name, description)
 }
 
 var recentGameTypes = [];
-var mapsRequest = new XMLHttpRequest();
+var gameTypesRequest = new XMLHttpRequest();
 gameTypesRequest.onload = function () {
     var data = JSON.parse(this.response)
     data.forEach((r_gt) => {
