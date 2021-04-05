@@ -49,9 +49,9 @@ infoRequest.onload = function () {
     $('#mbf-map-checksum').html("SHA256: " + data.checksum);
     $('#mbf-map-download').html('<button type="button" class="btn btn-primary btn-block" href="' + data.mbm + '">Download</button>');
     $("#mbf-map-description").html(data.description);
-    $('#mbf-map-creator').html(data.creator_name);
+    $('#mbf-map-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
     $('#mbf-map-timestamp').html(data.timestamp);
-    $('#mbf-map-filesize').html(data.file_size);
+    $('#mbf-map-filesize').html(data.file_size + " Byte");
     $('#mbf-map-tilesize').html(data.tile_size);
     $('#mbf-map-spawns').html(data.spawns);
     $('#mbf-map-powerups').html(data.powerups);
