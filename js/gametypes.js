@@ -27,7 +27,7 @@ function drawRecentGT()
     $("#mbf-recent-gts").empty();
     recentGameTypes.forEach((gt) => {
         $("#mbf-recent-gts").append(
-            '<div class="col-sm"><div class="card"><div class="card"><div class="card-body"><h5 class="card-title">' +
+            '<div class="col col-lg-1"><div class="card"><div class="card"><div class="card-body"><h5 class="card-title">' +
             gt.name +
             '</h5><p class="card-text">' + 
             gt.description + 
