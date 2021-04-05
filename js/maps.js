@@ -41,6 +41,13 @@ function drawRecent()
     })
 }
 
+var infoRequest = new XMLHttpRequest();
+infoRequest.onload = function () {
+    var data = JSON.parse(this.response)
+    $("#mbf-map-name").html(data.name);
+    $("#mbf-map-image").html('<img class="card-img-top" src="' + data.image + '">');
+}
+
 function loadMap(mapid)
 {
     infoRequest.open('GET', 'https://api.madbomber.net/map/info/' + mapid, true);
