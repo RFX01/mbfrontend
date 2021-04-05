@@ -6,6 +6,7 @@
     <meta name="description" content="MadBomber.NET - Repository">
     <meta name="author" content="RFX">
     <script src="js/maps.js"></script>
+    <script src="js/gametypes.js"></script>
     <title>MadBomber.NET - Repository</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
@@ -32,10 +33,15 @@
     </nav>
 
     <main role="main" class="container" style="margin-top:65px">
-        <h1>Content Repository</h1>
-        <div class="col-12">
-            <h2>Recent Maps</h2>
-            <div id="mbf-recent-maps" class="row">
+        <div class="row">
+            <h1>Recent Maps</h1>
+            <div id="mbf-recent-maps" class="col-12">
+                <b>Loading...</b>
+            </div>
+        </div> 
+        <div class="row">
+            <h2>Recent Game Types</h2>
+            <div id="mbf-recent-gts" class="col-12">
                 <b>Loading...</b>
             </div>
         </div> 
@@ -47,6 +53,7 @@
 
     <script>
         loadRecent();
+        loadRecentGT();
     </script>
   </body>
 </html>
