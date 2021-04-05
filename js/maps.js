@@ -25,6 +25,7 @@ function loadRecent()
 
 function drawRecent()
 {
+    $("#mbf-recent-maps").empty();
     recentMaps.forEach((map) => {
         $("#mbf-recent-maps").append(
             '<div class="col-3"><div class="card"><div class="card"><img class="card-img-top" src="' + 
