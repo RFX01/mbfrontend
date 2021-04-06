@@ -44,6 +44,7 @@ function drawRecent()
 var infoRequest = new XMLHttpRequest();
 infoRequest.onload = function () {
     var data = JSON.parse(this.response)
+    document.title = "MadBomber.NET - " + data.name;
     $("#mbf-map-name").html(data.name);
     $('#mbf-map-uuid').html(data.uuid);
     $('#mbf-map-checksum').html("SHA256: " + data.checksum);

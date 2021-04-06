@@ -41,6 +41,7 @@ function drawRecentGT()
 var gtInfoRequest = new XMLHttpRequest();
 gtInfoRequest.onload = function () {
     var data = JSON.parse(this.response)
+    document.title = "MadBomber.NET - " + data.name;
     $("#mbf-gt-name").html(data.name);
     $('#mbf-gt-uuid').html(data.uuid);
     $('#mbf-gt-checksum').html("SHA256: " + data.checksum);
