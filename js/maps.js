@@ -89,6 +89,7 @@ versionRequest.onload = function () {
 
 function loadVersions(uuid)
 {
+    console.log(uuid);
     versionRequest.open('GET', 'https://api.madbomber.net/map/versions/' + uuid, true);
     versionRequest.send();
 }
