@@ -28,7 +28,7 @@ function drawRecent()
     $("#mbf-recent-maps").empty();
     recentMaps.forEach((map) => {
         $("#mbf-recent-maps").append(
-            '<div class="col-md-3"><div class="card"><div class="card"><img class="card-img-top" src="' + 
+            '<div class="col-md-3"><div class="card" style="margin-bottom:16px;"><div class="card"><img class="card-img-top" src="' + 
             map.image +
             '"><div class="card-body"><h5 class="card-title">' +
             map.name +
@@ -62,7 +62,7 @@ infoRequest.onload = function () {
     $('#mbf-map-ms-triggers').html(data.map_script_triggers);
     $('#mbf-map-ms-commands').html(data.map_script_commands);
     $('#mbf-map-ms-variables').html(data.map_script_variables);
-    $("#mbf-map-image").html('<img class="mx-auto d-block" style="width:100%;object-fit:cover;" src="' + data.image + '">');
+    $("#mbf-map-image").html('<img class="d-block" style="width:100%;height:100%;object-fit:cover;" src="' + data.image + '">');
     loadVersions(data.uuid);
 }
 
