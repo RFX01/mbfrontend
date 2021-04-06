@@ -38,6 +38,7 @@ function drawRecentGT()
     })
 }
 
+var counter = 0;
 var gtInfoRequest = new XMLHttpRequest();
 gtInfoRequest.onload = function () {
     var data = JSON.parse(this.response)
@@ -94,8 +95,9 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-bombcountlimit').html(data.meta.bomb_count_limit + " Bomb/s");
     processPowerupSet(data.meta.powerup_set, '#mbf-gt-powerupset');
     processPowerupSet(data.meta.open_powerup_set, '#mbf-gt-openpowerupset');
+    counter = 0;
     data.meta.initial_ability_selection.forEach((ability) => {
-        serverCount++;
+        counter++;
         $('#mbf-gt-initialabilityselection').append(
             '<tr><th scope="row">' + 
             ability.ability + 
@@ -108,8 +110,9 @@ gtInfoRequest.onload = function () {
 
 function processPowerupSet(set, element)
 {
+    counter = 0;
     set.forEach((pup) => {
-        serverCount++;
+        counter++;
         $(element).append(
             '<tr><th scope="row">' + 
             pup.powerup + 
