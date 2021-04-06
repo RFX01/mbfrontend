@@ -100,6 +100,7 @@ gtInfoRequest.onload = function () {
         counter++;
         $('#mbf-gt-initialabilityselection').append(
             '<tr><th scope="row">' + 
+            '<img src="/img/' + ability.ability +'.png">' +
             ability.ability + 
             '</td><td>' + 
             ability.uses + 
@@ -115,6 +116,7 @@ function processPowerupSet(set, element)
         counter++;
         $(element).append(
             '<tr><th scope="row">' + 
+            '<img src="/img/' + pup.powerup +'.png">' +
             pup.powerup + 
             '</td><td>' + 
             pup.weight + 
