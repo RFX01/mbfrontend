@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="MadBomber.NET - Repository">
+    <meta name="author" content="RFX">
+    <script src="js/maps.js"></script>
+    <title>MadBomber.NET - Repository</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">MadBomber.NET</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servers.html">Server List</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/repo.html">Repository</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container" style="margin-top:65px">
+        <div class="row">
+            <div class="col-6">
+                <h1 id="mbf-gt-name">Loading...</h1>
+            </div>
+            <div class="col-6">
+                <p class="text-right" style="margin:0px;font-size:12px;">UUID</p>
+                <p class="text-right"><mark id="mbf-gt-uuid">Loading...</mark></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <small id="mbf-gt-description">Loading...</small>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-12">
+                <h1>Game Type Data</h1>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-8">
+                <h2>Basic Gameplay</h2>
+                <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">Setting</th>
+                        <th scope="col">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Paint Bomb</th>
+                        <td id="mbf-gt-paintbomb">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Goal Rush</th>
+                        <td id="mbf-gt-goalrush">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Respawns</th>
+                        <td id="mbf-gt-respawns">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Respawn Delay</th>
+                        <td id="mbf-gt-respawndelay">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Time Limit</th>
+                        <td id="mbf-gt-timelimit">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Fixed Spawns</th>
+                        <td id="mbf-gt-fixedspawns">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Map Loop</th>
+                        <td id="mbf-gt-maploop">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Health Bar</th>
+                        <td id="mbf-gt-healthbar">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Health Bar Size</th>
+                        <td id="mbf-gt-healthbarsize">...</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Post Hit Invincibility</th>
+                        <td id="mbf-gt-posthitinvincibility">...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-4">
+                <div id="mbf-gt-download"></div>
+                <p id="mbf-gt-checksum" style="font-size:11px;margin-top:3px;"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>Powerups</h2>
+            </div>
+            <div class="col-6">
+                <h2>Bombs</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>Abilities</h2>
+            </div>
+            <div class="col-6">
+                <h2>Ability Cooldowns</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>Multipliers</h2>
+            </div>
+            <div class="col-6">
+                <h2>Limiters</h2>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        loadGameType(urlParams.get('id'));
+    </script>
+  </body>
+</html>

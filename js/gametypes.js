@@ -37,3 +37,31 @@ function drawRecentGT()
         );
     })
 }
+
+var gtInfoRequest = new XMLHttpRequest();
+gtInfoRequest.onload = function () {
+    var data = JSON.parse(this.response)
+    $("#mbf-gt-name").html(data.name);
+    $('#mbf-gt-uuid').html(data.uuid);
+    $('#mbf-gt-checksum').html("SHA256: " + data.checksum);
+    $('#mbf-gt-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.xml + '\'">Download v' + data.version + '</button>');
+    $("#mbf-gt-description").html(data.description);
+    $('#mbf-gt-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
+    $('#mbf-gt-timestamp').html(data.timestamp);
+    $('#mbf-gt-paintbomb').html(data.meta.paint_bomb);
+    $('#mbf-gt-goalrush').html(data.meta.goal_rush);
+    $('#mbf-gt-respawns').html(data.meta.respawns);
+    $('#mbf-gt-respawndelay').html(data.meta.respawn_delay + " sec.");
+    $('#mbf-gt-timelimit').html(data.meta.time_limit + " min.");
+    $('#mbf-gt-fixedspawns').html(data.meta.fixed_spawns);
+    $('#mbf-gt-maploop').html(data.meta.map_loop);
+    $('#mbf-gt-healthbar').html(data.meta.health_bar);
+    $('#mbf-gt-healthbarsize').html(data.meta.health_bar_size + " HP");
+    $('#mbf-gt-posthitinvincibility').html(data.meta.post_hit_invincibility + " sec.");
+}
+
+function loadGameType(gtid)
+{
+    gtInfoRequest.open('GET', 'https://api.madbomber.net/gametype/info/' + gtid, true);
+    gtInfoRequest.send();
+}
