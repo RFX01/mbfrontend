@@ -44,6 +44,7 @@ gtInfoRequest.onload = function () {
     var data = JSON.parse(this.response)
     document.title = "MadBomber.NET - " + data.name;
     $("#mbf-gt-name").html(data.name);
+    $("#mbf-gt-filesize").html(data.meta.file_size);
     $('#mbf-gt-uuid').html(data.uuid);
     $('#mbf-gt-checksum').html("SHA256: " + data.checksum);
     $('#mbf-gt-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.xml + '\'">Download v' + data.version + '</button>');
@@ -107,6 +108,7 @@ gtInfoRequest.onload = function () {
             '</td><td></tr>'
         );
     })
+    loadVersions(data.uuid);
 }
 
 function processPowerupSet(set, element)
@@ -131,4 +133,29 @@ function loadGameType(gtid)
 {
     gtInfoRequest.open('GET', 'https://api.madbomber.net/gametype/info/' + gtid, true);
     gtInfoRequest.send();
+}
+
+var versionCount = 0;
+var versionRequest = new XMLHttpRequest();
+var versionUUID = "";
+versionRequest.onload = function () {
+    versionCount = 0;
+    var data = JSON.parse(this.response)
+    data.forEach((version) => {
+        versionCount++;
+        $("#mbf-map-versions").append(
+            '<tr><td><a style="font-size:14px;" href="/map.html?id=' + version.id + '">' + 
+            versionUUID + "/v" + version.version + 
+            '</a><p style="font-size:10px;margin-bottom:0px;">' +
+            "SHA256: " + version.checksum +
+            '</p></td></tr>'
+        );
+    })
+}
+
+function loadVersions(uuid)
+{
+    versionUUID = uuid;
+    versionRequest.open('GET', 'https://api.madbomber.net/gametype/versions/' + uuid, true);
+    versionRequest.send();
 }
