@@ -144,7 +144,7 @@ versionRequest.onload = function () {
     data.forEach((version) => {
         versionCount++;
         $("#mbf-gt-versions").append(
-            '<tr><td><a style="font-size:14px;" href="/map.html?id=' + version.id + '">' + 
+            '<tr><td><a style="font-size:14px;" href="/gametype.html?id=' + version.id + '">' + 
             versionUUID + "/v" + version.version + 
             '</a><p style="font-size:10px;margin-bottom:0px;">' +
             "SHA256: " + version.checksum +
