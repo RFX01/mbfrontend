@@ -74,6 +74,7 @@ function loadMap(mapid)
 
 var versionCount = 0;
 var versionRequest = new XMLHttpRequest();
+var versionUUID = "";
 versionRequest.onload = function () {
     versionCount = 0;
     var data = JSON.parse(this.response)
@@ -81,15 +82,17 @@ versionRequest.onload = function () {
         versionCount++;
         $("#mbf-map-versions").append(
             '<tr><td><a href="/map.html?id=' + version.id + '">' + 
-            "v" + version.version + 
-            '</a></td></tr>'
+            versionUUID + "/v" + version.version + 
+            '</a><p style="font-size:11px;margin-top:3px;">' +
+            "SHA256: " + version.checksum +
+            '</p></td></tr>'
         );
     })
 }
 
 function loadVersions(uuid)
 {
-    console.log(uuid);
+    versionUUID = uuid;
     versionRequest.open('GET', 'https://api.madbomber.net/map/versions/' + uuid, true);
     versionRequest.send();
 }
