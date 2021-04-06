@@ -63,10 +63,32 @@ infoRequest.onload = function () {
     $('#mbf-map-ms-commands').html(data.map_script_commands);
     $('#mbf-map-ms-variables').html(data.map_script_variables);
     $("#mbf-map-image").html('<img class="img-fluid" src="' + data.image + '">');
+    loadVersions(data.uuid);
 }
 
 function loadMap(mapid)
 {
     infoRequest.open('GET', 'https://api.madbomber.net/map/info/' + mapid, true);
     infoRequest.send();
+}
+
+var versionCount = 0;
+var versionRequest = new XMLHttpRequest();
+versionRequest.onload = function () {
+    versionCount = 0;
+    var data = JSON.parse(this.response)
+    data.forEach((version) => {
+        versionCount++;
+        $("#mbf-map-versions").append(
+            '<tr><td><a href="/map.html?id=' + version.id + '">' + 
+            "v" + version.version + 
+            '</a></td></tr>'
+        );
+    })
+}
+
+function loadVersions(uuid)
+{
+    versionRequest.open('GET', 'https://api.madbomber.net/map/versions/' + uuid, true);
+    versionRequest.send();
 }
