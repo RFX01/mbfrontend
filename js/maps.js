@@ -62,7 +62,7 @@ infoRequest.onload = function () {
     $('#mbf-map-ms-triggers').html(data.map_script_triggers);
     $('#mbf-map-ms-commands').html(data.map_script_commands);
     $('#mbf-map-ms-variables').html(data.map_script_variables);
-    $("#mbf-map-image").html('<img class="mx-auto d-block" style="width:auto;object-fit:cover;" src="' + data.image + '">');
+    $("#mbf-map-image").html('<img class="mx-auto d-block" style="width:100%;object-fit:cover;" src="' + data.image + '">');
     loadVersions(data.uuid);
 }
 
