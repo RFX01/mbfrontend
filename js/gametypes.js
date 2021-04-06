@@ -59,6 +59,10 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-healthbar').html(data.meta.health_bar);
     $('#mbf-gt-healthbarsize').html(data.meta.health_bar_size + " HP");
     $('#mbf-gt-posthitinvincibility').html(data.meta.post_hit_invincibility + " sec.");
+    $('#mbf-gt-powerupplacement').html(data.meta.powerup_placement);
+    $('#mbf-gt-openpowerups').html(data.meta.open_powerups);
+    $('#mbf-gt-powerupconcentration').html(data.meta.powerup_concentration + "%");
+    $('#mbf-gt-openpowerupconcentration').html(data.meta.open_powerup_concentration + "%");
 }
 
 function loadGameType(gtid)
