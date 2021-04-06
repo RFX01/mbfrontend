@@ -92,9 +92,9 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-fastignitionlimit').html(data.meta.fast_ignition_limit + " ms");
     $('#mbf-gt-fireradiuslimit').html(data.meta.fire_radius_limit + " Tile/s");
     $('#mbf-gt-bombcountlimit').html(data.meta.bomb_count_limit + " Bomb/s");
-    processPowerupSet(data.powerup_set, '#mbf-gt-powerupset');
-    processPowerupSet(data.open_powerup_set, '#mbf-gt-openpowerupset');
-    data.initial_ability_selection.forEach((ability) => {
+    processPowerupSet(data.meta.powerup_set, '#mbf-gt-powerupset');
+    processPowerupSet(data.meta.open_powerup_set, '#mbf-gt-openpowerupset');
+    data.meta.initial_ability_selection.forEach((ability) => {
         serverCount++;
         $('#mbf-gt-initialabilityselection').append(
             '<tr><th scope="row">' + 
