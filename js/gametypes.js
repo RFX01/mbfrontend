@@ -92,6 +92,34 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-fastignitionlimit').html(data.meta.fast_ignition_limit + " ms");
     $('#mbf-gt-fireradiuslimit').html(data.meta.fire_radius_limit + " Tile/s");
     $('#mbf-gt-bombcountlimit').html(data.meta.bomb_count_limit + " Bomb/s");
+    processPowerupSet(data.powerup_set, '#mbf-gt-powerupset');
+    processPowerupSet(data.open_powerup_set, '#mbf-gt-openpowerupset');
+    data.initial_ability_selection.forEach((ability) => {
+        serverCount++;
+        $('#mbf-gt-initialabilityselection').append(
+            '<tr><th scope="row">' + 
+            ability.ability + 
+            '</td><td>' + 
+            ability.uses + 
+            '</td><td></tr>'
+        );
+    })
+}
+
+function processPowerupSet(set, element)
+{
+    set.forEach((pup) => {
+        serverCount++;
+        $(element).append(
+            '<tr><th scope="row">' + 
+            pup.powerup + 
+            '</td><td>' + 
+            pup.weight + 
+            '</td><td>' + 
+            pup.limit + 
+            '</td><td></tr>'
+        );
+    })
 }
 
 function loadGameType(gtid)
