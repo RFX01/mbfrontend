@@ -63,6 +63,35 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-openpowerups').html(data.meta.open_powerups);
     $('#mbf-gt-powerupconcentration').html(data.meta.powerup_concentration + "%");
     $('#mbf-gt-openpowerupconcentration').html(data.meta.open_powerup_concentration + "%");
+    $('#mbf-gt-bombswitch').html(data.meta.bomb_switch);
+    $('#mbf-gt-infiniteabilities').html(data.meta.infinite_abilities);
+    $('#mbf-gt-abilitycooldown').html(data.meta.ability_cooldown);
+    $('#mbf-gt-invincibilitytimer').html(data.meta.invincibility_timer + " sec.");
+    $('#mbf-gt-bombfreezetimer').html(data.meta.bomb_freeze_timer + " sec.");
+    $('#mbf-gt-powerupradartimer').html(data.meta.powerup_radar_timer + " sec.");
+    $('#mbf-gt-bombkickcooldown').html(data.meta.bomb_kick_cooldown + " sec.");
+    $('#mbf-gt-linebombcooldown').html(data.meta.line_bomb_cooldown + " sec.");
+    $('#mbf-gt-invincibilitycooldown').html(data.meta.invincibility_cooldown + " sec.");
+    $('#mbf-gt-bombfreezecooldown').html(data.meta.bomb_freeze_cooldown + " sec.");
+    $('#mbf-gt-powerupradarcooldown').html(data.meta.powerup_radar_cooldown + " sec.");
+    $('#mbf-gt-basespeedmultiplier').html(data.meta.base_speed_multiplier + " x");
+    $('#mbf-gt-bombspeedmultiplier').html(data.meta.bomb_speed_multiplier + " x");
+    $('#mbf-gt-basefireradiusmultiplier').html(data.meta.base_fire_radius_multiplier + " x");
+    $('#mbf-gt-baseburntimemultiplier').html(data.meta.base_burn_time_multiplier + " x");
+    $('#mbf-gt-fireupmultiplier').html(data.meta.fire_up_multiplier + " x");
+    $('#mbf-gt-bombupmultiplier').html(data.meta.bomb_up_multiplier + " x");
+    $('#mbf-gt-speedupmultiplier').html(data.meta.speed_up_multiplier + " x");
+    $('#mbf-gt-burntimeupmultiplier').html(data.meta.burn_time_up_multiplier + " x");
+    $('#mbf-gt-ignitionspeedupmultiplier').html(data.meta.ignition_speed_up_multiplier + " x");
+    $('#mbf-gt-abilitypickupmultiplier').html(data.meta.ability_pickup_multiplier + " x");
+    $('#mbf-gt-capsuleradiusmultiplier').html(data.meta.capsule_radius_multiplier + " x");
+    $('#mbf-gt-fastignitiondivider').html(data.meta.fast_ignition_divider + " /");
+    $('#mbf-gt-longignitiondivider').html(data.meta.long_ignition_divider + " /");
+    $('#mbf-gt-speedlimit').html(data.meta.speed_limit + " pps");
+    $('#mbf-gt-burntimelimit').html(data.meta.burn_time_limit) + " ms";
+    $('#mbf-gt-fastignitionlimit').html(data.meta.fast_ignition_limit + " ms");
+    $('#mbf-gt-fireradiuslimit').html(data.meta.fire_radius_limit + " Tile/s");
+    $('#mbf-gt-bombcountlimit').html(data.meta.bomb_count_limit + " Bomb/s");
 }
 
 function loadGameType(gtid)
