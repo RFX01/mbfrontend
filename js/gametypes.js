@@ -143,7 +143,7 @@ versionRequest.onload = function () {
     var data = JSON.parse(this.response)
     data.forEach((version) => {
         versionCount++;
-        $("#mbf-map-versions").append(
+        $("#mbf-gt-versions").append(
             '<tr><td><a style="font-size:14px;" href="/map.html?id=' + version.id + '">' + 
             versionUUID + "/v" + version.version + 
             '</a><p style="font-size:10px;margin-bottom:0px;">' +
