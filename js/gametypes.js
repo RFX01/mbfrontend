@@ -30,7 +30,7 @@ function drawRecentGT()
             '<div class="col-md"><div class="card"><div class="card"><div class="card-body"><h5 class="card-title">' +
             gt.name +
             '</h5><p class="card-text">' + 
-            gt.description + 
+            gt.description.replace(/(?:\r\n|\r|\n)/g, '<br>') + 
             '</p><a href="/gametype.html?id=' +
             gt.id + 
             '" class="card-link">Details...</a></div></div></div></div>'
@@ -48,7 +48,7 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-uuid').html(data.uuid);
     $('#mbf-gt-checksum').html("SHA256: " + data.checksum);
     $('#mbf-gt-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.xml + '\'">Download v' + data.version + '</button>');
-    $("#mbf-gt-description").html(data.description);
+    $("#mbf-gt-description").html(data.description.replace(/(?:\r\n|\r|\n)/g, '<br>'));
     $('#mbf-gt-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
     $('#mbf-gt-timestamp').html(data.timestamp);
     $('#mbf-gt-paintbomb').html(data.meta.paint_bomb);

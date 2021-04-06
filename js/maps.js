@@ -33,7 +33,7 @@ function drawRecent()
             '"><div class="card-body"><h5 class="card-title">' +
             map.name +
             '</h5><p class="card-text">' + 
-            map.description + 
+            map.description.replace(/(?:\r\n|\r|\n)/g, '<br>') + 
             '</p><a href="/map.html?id=' +
             map.id + 
             '" class="card-link">Details...</a></div></div></div></div>'
@@ -49,7 +49,7 @@ infoRequest.onload = function () {
     $('#mbf-map-uuid').html(data.uuid);
     $('#mbf-map-checksum').html("SHA256: " + data.checksum);
     $('#mbf-map-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.mbm + '\'">Download v' + data.version + '</button>');
-    $("#mbf-map-description").html(data.description);
+    $("#mbf-map-description").html(data.description.replace(/(?:\r\n|\r|\n)/g, '<br>'));
     $('#mbf-map-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
     $('#mbf-map-timestamp').html(data.timestamp);
     $('#mbf-map-filesize').html(data.file_size + " Byte");
