@@ -8,6 +8,17 @@
     <script src="js/maps.js"></script>
     <title>MadBomber.NET - Repository</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .mbf-mapimg {
+        width:100%;
+      }
+      @media only screen and (max-device-width: 480px) {
+        .mbf-mapimg {
+          width:100%;
+          height:100%;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -33,10 +44,10 @@
 
     <main role="main" class="container" style="margin-top:65px">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <h1 id="mbf-map-name">Loading...</h1>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <p class="text-right" style="margin:0px;font-size:12px;">UUID</p>
                 <p class="text-right"><mark id="mbf-map-uuid">Loading...</mark></p>
             </div>
@@ -55,7 +66,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <table class="table table-sm">
                     <tbody>
                         <tr>
@@ -109,7 +120,7 @@
                     </tbody>
                   </table>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div id="mbf-map-download"></div>
                 <p id="mbf-map-checksum" style="font-size:11px;margin-top:3px;"></p>
                 <table class="table table-bordered">
