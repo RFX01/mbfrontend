@@ -15,12 +15,38 @@ infoRequest.onload = function () {
         counter++;
         $('#mbf-match-kills').html(
             '<tr><td>' + 
-            kill.timestamp +
+            kill.timestamp + " sec."+
             '</td><th scope="row">' + 
             '<a href="/player.html?id=' + kill.killer_id + '">' + kill.killer_name + '</a>' +
             '</th><td>&#8594;</td><th scope="row">' + 
             '<a href="/player.html?id=' + kill.killed_id + '">' + kill.killed_name + '</a>' +
             '</th></tr>'
+        );
+    })
+
+    counter = 0;
+    data.players.forEach((player) => {
+        counter++
+        $('#mbf-match-players').html(
+            '<div class="col-md-4"><div class="card"><div class="card-header">' + 
+            '<a href="/player.html?id=' + player.id + '">' + player.name + '</a>' +
+            '</div><ul class="list-group list-group-flush"><li class="list-group-item"><b>Kills </b>' +
+            player.kills + 
+            '</li><li class="list-group-item"><b>Deaths </b>' +
+            player.deaths + 
+            '</li><li class="list-group-item"><b>K/D Ratio </b>' +
+            player.kd_ratio +
+            '</li><li class="list-group-item"><b>Painted </b>' +
+            player.painted_tiles +
+            '</li><li class="list-group-item"><b>Tiles </b>' +
+            player.broken_tiles + 
+            '</li><li class="list-group-item"><b>Bombs </b>' +
+            player.placed_bombs +
+            '</li><li class="list-group-item"><b>Abilities </b>' +
+            player.used_abilities + 
+            '</li><li class="list-group-item"><b>Powerups </b>' +
+            player.collected_powerups +
+            '</li></ul></div></div>'
         );
     })
 }
