@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="MadBomber.NET - Repository">
+    <meta name="author" content="RFX">
+    <script src="js/match.js"></script>
+    <title>MadBomber.NET - Repository</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">MadBomber.NET</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servers.html">Server List</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/repo.html">Repository</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container" style="margin-top:65px">
+        <div class="row">
+            <div class="col-6">
+                <h1 id="mbf-match-title">Loading...</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Timestamp</th>
+                            <td id="mbf-match-timestamp">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Playtime</th>
+                            <td id="mbf-match-playtime">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Winner</th>
+                            <td id="mbf-match-winner">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Map</th>
+                            <td id="mbf-match-map">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Game Type</th>
+                            <td id="mbf-match-gametype">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Server</th>
+                            <td id="mbf-match-server">...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Kills</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="mbf-match-kills">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr/>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        loadMatch(urlParams.get('id'));
+    </script>
+  </body>
+</html>
