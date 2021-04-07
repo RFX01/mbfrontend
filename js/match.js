@@ -40,7 +40,7 @@ infoRequest.onload = function () {
             player.painted_tiles +
             '</p></li><li class="list-group-item pt-1 pb-1"><b>Tiles Broken</b><p class="mb-0 float-right">' +
             player.broken_tiles + 
-            '</p></li><li class="list-group-item pt-1 pb-1"><b>Bombs Places</b><p class="mb-0 float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Bombs Placed</b><p class="mb-0 float-right">' +
             player.placed_bombs +
             '</p></li><li class="list-group-item pt-1 pb-1"><b>Abilities Used</b><p class="mb-0 float-right">' +
             player.used_abilities + 
