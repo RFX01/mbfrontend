@@ -20,8 +20,8 @@ infoRequest.onload = function () {
             '</th><td>&#8594;</td><th scope="row">' + 
             '<a href="/player.html?id=' + data.killed_id + '">' + data.killed_name + '</a>' +
             '</th></tr>'
-        )
-    }
+        );
+    })
 }
 
 function loadMatch(id)
