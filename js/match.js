@@ -36,15 +36,15 @@ infoRequest.onload = function () {
             player.deaths + 
             '</p></li><li class="list-group-item pt-1 pb-1"><b>K/D Ratio </b><p class="mb-0 float-right">' +
             player.kd_ratio +
-            '</p></li><li class="list-group-item pt-1 pb-1"><b>Painted </b><p class="mb-0 float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Tiles Painted</b><p class="mb-0 float-right">' +
             player.painted_tiles +
-            '</p></li><li class="list-group-item pt-1 pb-1"><b>Tiles </b><p class="mb-0 float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Tiles Broken</b><p class="mb-0 float-right">' +
             player.broken_tiles + 
-            '</p></li><li class="list-group-item pt-1 pb-1"><b>Bombs </b><p class="mb-0 float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Bombs Places</b><p class="mb-0 float-right">' +
             player.placed_bombs +
-            '</p></li><li class="list-group-item pt-1 pb-1"><b>Abilities </b><p class="mb-0 float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Abilities Used</b><p class="mb-0 float-right">' +
             player.used_abilities + 
-            '</p></li><li class="list-group-item pt-1 pb-1"><b>Powerups </b><p class="mb-0 float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Powerups Collected</b><p class="mb-0 float-right">' +
             player.collected_powerups +
             '</p></li></ul></div></div>'
         );
