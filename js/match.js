@@ -27,7 +27,7 @@ infoRequest.onload = function () {
     counter = 0;
     data.players.forEach((player) => {
         counter++
-        $('#mbf-match-players').html(
+        $('#mbf-match-players').append(
             '<div class="col-md-4"><div class="card"><div class="card-header">' + 
             '<a href="/player.html?id=' + player.id + '">' + player.name + '</a>' +
             '</div><ul class="list-group list-group-flush"><li class="list-group-item"><b>Kills </b>' +
