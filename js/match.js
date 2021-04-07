@@ -17,9 +17,9 @@ infoRequest.onload = function () {
             '<tr><td>' + 
             kill.timestamp +
             '</td><th scope="row">' + 
-            '<a href="/player.html?id=' + data.killer_id + '">' + data.killer_name + '</a>' +
+            '<a href="/player.html?id=' + kill.killer_id + '">' + kill.killer_name + '</a>' +
             '</th><td>&#8594;</td><th scope="row">' + 
-            '<a href="/player.html?id=' + data.killed_id + '">' + data.killed_name + '</a>' +
+            '<a href="/player.html?id=' + kill.killed_id + '">' + kill.killed_name + '</a>' +
             '</th></tr>'
         );
     })
