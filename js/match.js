@@ -30,23 +30,23 @@ infoRequest.onload = function () {
         $('#mbf-match-players').append(
             '<div class="col-md-4"><div class="card"><div class="card-header">' + 
             '<a href="/player.html?id=' + player.id + '">' + player.name + '</a>' +
-            '</div><ul class="list-group list-group-flush"><li class="list-group-item"><b>Kills </b>' +
+            '</div><ul class="list-group list-group-flush"><li class="list-group-item"><b>Kills </b><p class="float-right">' +
             player.kills + 
-            '</li><li class="list-group-item"><b>Deaths </b>' +
+            '</p></li><li class="list-group-item"><b>Deaths </b><p class="float-right">' +
             player.deaths + 
-            '</li><li class="list-group-item"><b>K/D Ratio </b>' +
+            '</p></li><li class="list-group-item"><b>K/D Ratio </b><p class="float-right">' +
             player.kd_ratio +
-            '</li><li class="list-group-item"><b>Painted </b>' +
+            '</p></li><li class="list-group-item"><b>Painted </b><p class="float-right">' +
             player.painted_tiles +
-            '</li><li class="list-group-item"><b>Tiles </b>' +
+            '</p></li><li class="list-group-item"><b>Tiles </b><p class="float-right">' +
             player.broken_tiles + 
-            '</li><li class="list-group-item"><b>Bombs </b>' +
+            '</p></li><li class="list-group-item"><b>Bombs </b><p class="float-right">' +
             player.placed_bombs +
-            '</li><li class="list-group-item"><b>Abilities </b>' +
+            '</p></li><li class="list-group-item"><b>Abilities </b><p class="float-right">' +
             player.used_abilities + 
-            '</li><li class="list-group-item"><b>Powerups </b>' +
+            '</p></li><li class="list-group-item"><b>Powerups </b><p class="float-right">' +
             player.collected_powerups +
-            '</li></ul></div></div>'
+            '</p></li></ul></div></div>'
         );
     })
 }
