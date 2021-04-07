@@ -30,21 +30,21 @@ infoRequest.onload = function () {
         $('#mbf-match-players').append(
             '<div class="col-md-4"><div class="card"><div class="card-header">' + 
             '<a href="/player.html?id=' + player.id + '">' + player.name + '</a>' +
-            '</div><ul class="list-group list-group-flush"><li class="list-group-item"><b>Kills </b><p class="float-right">' +
+            '</div><ul class="list-group list-group-flush"><li class="list-group-item pt-1 pb-1"><b>Kills </b><p class="mb-0 float-right">' +
             player.kills + 
-            '</p></li><li class="list-group-item"><b>Deaths </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Deaths </b><p class="mb-0 float-right">' +
             player.deaths + 
-            '</p></li><li class="list-group-item"><b>K/D Ratio </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>K/D Ratio </b><p class="mb-0 float-right">' +
             player.kd_ratio +
-            '</p></li><li class="list-group-item"><b>Painted </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Painted </b><p class="mb-0 float-right">' +
             player.painted_tiles +
-            '</p></li><li class="list-group-item"><b>Tiles </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Tiles </b><p class="mb-0 float-right">' +
             player.broken_tiles + 
-            '</p></li><li class="list-group-item"><b>Bombs </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Bombs </b><p class="mb-0 float-right">' +
             player.placed_bombs +
-            '</p></li><li class="list-group-item"><b>Abilities </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Abilities </b><p class="mb-0 float-right">' +
             player.used_abilities + 
-            '</p></li><li class="list-group-item"><b>Powerups </b><p class="float-right">' +
+            '</p></li><li class="list-group-item pt-1 pb-1"><b>Powerups </b><p class="mb-0 float-right">' +
             player.collected_powerups +
             '</p></li></ul></div></div>'
         );
