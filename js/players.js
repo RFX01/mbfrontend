@@ -5,7 +5,6 @@ infoRequest.onload = function () {
     $("#mbf-player-name").html(data.name);
     $('#mbf-player-trustimg').attr('src', 'img/' + data.trust_rank + '.png');
     $('#mbf-player-trustscore').html("(" + data.trust_score + ")");
-    $('#mbf-player-trustimg').html(data.trust_rank)
     $('#mbf-player-trustrank').append(data.trust_rank)
 }
 
