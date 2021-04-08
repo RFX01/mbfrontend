@@ -83,7 +83,7 @@ matchesRequest.onload = function () {
             '</th><td>' +
             match.player_count +
             '</td><td>' +
-            match.playtime +
+            match.playtime + " sec." +
             '</td></tr>'
         );
     })
