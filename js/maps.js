@@ -116,9 +116,9 @@ mpmRequest.onload = function () {
             '\'"><th scope="row">' +
             map.name + " (v" + map.version + ")" +
             '</th><td>' +
-            map.hours_played +
+            map.hours_played + " hrs." +
             '</td><td>' +
-            map.play_count + " sec." +
+            map.play_count +
             '</td></tr>'
         );
     })
