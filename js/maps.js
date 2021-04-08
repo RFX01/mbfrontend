@@ -62,7 +62,7 @@ infoRequest.onload = function () {
     $('#mbf-map-playtime').html(data.cumulative_playtime + " hrs.");
     if (data.game_type_id != null)
     {
-        $('#mbf-map-gtlink').html('<a href="/player.html?id=' + data.game_type_id + '">' + data.game_type_name + '</a>');
+        $('#mbf-map-gtlink').html('<a href="/gametype.html?id=' + data.game_type_id + '">' + data.game_type_name + '</a>');
     }
     else
     {
