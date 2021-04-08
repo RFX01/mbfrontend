@@ -27,6 +27,19 @@ infoRequest.onload = function () {
     {
         $('#mbf-player-currentserver').html(data.server_name);
     }
+    data.recent_matches.forEach((match) => {
+        $('#mbf-player-matches').append(
+            "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/match.html?id=" +
+            match.id +
+            '\'"><th scope="row">' +
+            "Match#" + match.id +
+            '</th><td>' +
+            match.player_count +
+            '</td><td>' +
+            match.playtime + " sec." +
+            '</td></tr>'
+        );
+    })
 }
 
 function loadPlayer(id)
