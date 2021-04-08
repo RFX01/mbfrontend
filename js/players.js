@@ -19,6 +19,8 @@ infoRequest.onload = function () {
     $('#mbf-player-playcount').html(data.play_count);
     $('#mbf-player-playtime').html(secondsTimeSpanToHMS(data.cumulative_playtime));
     $('#mbf-player-submissions').html(data.submission_count + " / <b>" + data.submission_limit + "</b>");
+    $('#mbf-player-avgkd').html(data.avg_kd_ratio);
+    $('#mbf-player-winpercent').html(data.win_percentage + "%");
     if (data.server_id != null)
     {
         $('#mbf-player-currentserver').html('<a href="/server.html?id=' + data.server_id + '">' + data.server_name + '</a>');
