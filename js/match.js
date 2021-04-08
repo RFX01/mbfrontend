@@ -76,9 +76,9 @@ matchesRequest.onload = function () {
     var data = JSON.parse(this.response)
     data.forEach((match) => {
         $('#mbf-recent-matches').append(
-            "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/match.html?id=\"" +
+            "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/match.html?id=" +
             match.id +
-            "'" + '"><th scope="row">' +
+            '\'"><th scope="row">' +
             "Match#" + match.id +
             '</th><td>' +
             match.player_count +
