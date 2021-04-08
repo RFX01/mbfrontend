@@ -105,3 +105,28 @@ function loadVersions(uuid)
     versionRequest.open('GET', 'https://api.madbomber.net/map/versions/' + uuid, true);
     versionRequest.send();
 }
+
+var mpmRequest = new XMLHttpRequest();
+mpmRequest.onload = function () {
+    var data = JSON.parse(this.response)
+    data.forEach((map) => {
+        $('#mbf-recent-matches').append(
+            "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/map.html?id=" +
+            map.id +
+            '\'"><th scope="row">' +
+            "Match#" + map.id +
+            '</th><td>' +
+            map.hours_played +
+            '</td><td>' +
+            map.play_count + " sec." +
+            '</td></tr>'
+        );
+    })
+}
+
+
+function loadMostPlayedMaps()
+{
+    mpmRequest.open('GET', 'https://api.madbomber.net/map/list/mostplayed', true);
+    mpmRequest.send();
+}

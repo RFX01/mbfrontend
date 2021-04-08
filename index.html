@@ -7,6 +7,7 @@
     <meta name="author" content="RFX">
     <title>MadBomber.NET - Home</title>
     <script src="js/match.js"></script>
+    <script src="js/maps.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
@@ -73,6 +74,16 @@
         </div>
         <div class="col-md-6">
           <h2>Most Played Maps</h2>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Play Time</th>
+                <th scope="col">Match Count</th>
+              </tr>
+            </thead>
+            <tbody id="mbf-mostplayed-maps"></tbody>
+          </table>
         </div>
       </div>
     </main>
@@ -82,6 +93,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
       loadRecentMatches();
+      loadMostPlayedMaps();
     </script>
   </body>
 </html>
