@@ -13,7 +13,7 @@ infoRequest.onload = function () {
     counter = 0;
     data.kills.forEach((kill) => {
         counter++;
-        $('#mbf-match-kills').html(
+        $('#mbf-match-kills').append(
             '<tr><td>' + 
             kill.timestamp + " sec."+
             '</td><th scope="row">' + 
