@@ -60,7 +60,7 @@ infoRequest.onload = function () {
     $('#mbf-map-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
     $('#mbf-map-playcount').html(data.play_count);
     $('#mbf-map-playtime').html(data.cumulative_playtime + " hrs.");
-    if (data.game_type_id == null)
+    if (data.game_type_id != null)
     {
         $('#mbf-map-gtlink').html('<a href="/player.html?id=' + data.game_type_id + '">' + data.game_type_name + '</a>');
     }
