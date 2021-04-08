@@ -58,6 +58,16 @@ infoRequest.onload = function () {
     $('#mbf-map-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.mbm + '\'">Download v' + data.version + '</button>');
     $("#mbf-map-description").html(data.description.replace(/(?:\r\n|\r|\n)/g, '<br>'));
     $('#mbf-map-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
+    $('#mbf-map-playcount').html(data.play_count);
+    $('#mbf-map-playtime').html(data.cumulative_playtime + " hrs.");
+    if (data.game_type_id == null)
+    {
+        $('#mbf-map-gtlink').html('<a href="/player.html?id=' + data.game_type_id + '">' + data.game_type_name + '</a>');
+    }
+    else
+    {
+        $('#mbf-map-gtlink').html(data.game_type_name);
+    }
     $('#mbf-map-timestamp').html(data.timestamp);
     $('#mbf-map-filesize').html(data.file_size + " Byte");
     $('#mbf-map-tilesize').html(data.tile_size);
