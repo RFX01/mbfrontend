@@ -13,15 +13,28 @@ infoRequest.onload = function () {
     counter = 0;
     data.kills.forEach((kill) => {
         counter++;
-        $('#mbf-match-kills').append(
-            '<tr><td>' + 
-            kill.timestamp + " sec."+
-            '</td><th scope="row">' + 
-            '<a href="/player.html?id=' + kill.killer_id + '">' + kill.killer_name + '</a>' +
-            '</th><td>&#8594;</td><th scope="row">' + 
-            '<a href="/player.html?id=' + kill.killed_id + '">' + kill.killed_name + '</a>' +
-            '</th></tr>'
-        );
+        var startString ='<tr><td>' + 
+        kill.timestamp + " sec."+
+        '</td><th scope="row">';
+        var endString = '</th><td>&#8594;</td><th scope="row">' + 
+        '<a href="/player.html?id=' + kill.killed_id + '">' + kill.killed_name + '</a>' +
+        '</th></tr>';
+        if (kill.killed_id == null)
+        {
+            $('#mbf-match-kills').append(
+                startString + 
+                kill.killer_name +
+                endString
+            );
+        }
+        else
+        {
+            $('#mbf-match-kills').append(
+                startString + 
+                '<a href="/player.html?id=' + kill.killer_id + '">' + kill.killer_name + '</a>' +
+                endString
+            );
+        }
     })
 
     counter = 0;
