@@ -6,6 +6,7 @@
     <meta name="description" content="MadBomber.NET - Server List">
     <meta name="author" content="RFX">
     <title>MadBomber.NET - Home</title>
+    <script src="js/match.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
@@ -53,21 +54,34 @@
           </p>
         </div>
         <div class="col-md-3">
-          <iframe src="https://discordapp.com/widget?id=782670091032592416&theme=dark" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          <iframe src="https://discordapp.com/widget?id=782670091032592416&theme=dark" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
       </div>
       <div class="row">
-        <!--<div class="col-md-6">
+        <div class="col-md-6">
           <h2>Recent Matches</h2>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Player Count</th>
+                <th scope="col">Playtime</th>
+              </tr>
+            </thead>
+            <tbody id="mbf-recent-matches"></tbody>
+          </table>
         </div>
         <div class="col-md-6">
           <h2>Most Played Maps</h2>
-        </div>-->
+        </div>
       </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      loadRecentMatches();
+    </script>
   </body>
 </html>

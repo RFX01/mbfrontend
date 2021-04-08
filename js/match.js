@@ -69,3 +69,29 @@ function loadMatch(id)
     infoRequest.open('GET', 'https://api.madbomber.net/match/info/' + id, true);
     infoRequest.send();
 }
+
+var recentMatches = [];
+var matchesRequest = new XMLHttpRequest();
+matchesRequest.onload = function () {
+    var data = JSON.parse(this.response)
+    data.forEach((match) => {
+        $('#mbf-recent-matches').append(
+            "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/match.html?id=\"" +
+            match.id +
+            "'" + '"><th scope="row">' +
+            "Match#" + match.id +
+            '</th><td>' +
+            match.player_count +
+            '</td><td>' +
+            match.playtime +
+            '</td></tr>'
+        );
+    })
+}
+
+
+function loadRecentMatches()
+{
+    matchesRequest.open('GET', 'https://api.madbomber.net/match/list/recent', true);
+    matchesRequest.send();
+}
