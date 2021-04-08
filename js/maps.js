@@ -110,11 +110,11 @@ var mpmRequest = new XMLHttpRequest();
 mpmRequest.onload = function () {
     var data = JSON.parse(this.response)
     data.forEach((map) => {
-        $('#mbf-recent-matches').append(
+        $('#mbf-mostplayed-maps').append(
             "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/map.html?id=" +
             map.id +
             '\'"><th scope="row">' +
-            "Match#" + map.id +
+            map.name +
             '</th><td>' +
             map.hours_played +
             '</td><td>' +
