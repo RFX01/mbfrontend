@@ -114,7 +114,7 @@ mpmRequest.onload = function () {
             "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/map.html?id=" +
             map.id +
             '\'"><th scope="row">' +
-            map.name +
+            map.name + " (v" + map.version + ")" +
             '</th><td>' +
             map.hours_played +
             '</td><td>' +
