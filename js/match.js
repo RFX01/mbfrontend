@@ -19,7 +19,7 @@ infoRequest.onload = function () {
         var endString = '</th><td>&#8594;</td><th scope="row">' + 
         '<a href="/player.html?id=' + kill.killed_id + '">' + kill.killed_name + '</a>' +
         '</th></tr>';
-        if (kill.killed_id == null)
+        if (kill.killer_id == null)
         {
             $('#mbf-match-kills').append(
                 startString + 
