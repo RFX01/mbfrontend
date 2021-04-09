@@ -108,7 +108,8 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        loadServer();
+        const urlParams = new URLSearchParams(window.location.search);
+        loadServer(urlParams.get('id'));
     </script>
   </body>
 </html>
