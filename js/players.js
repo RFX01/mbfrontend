@@ -60,7 +60,7 @@ infoRequest.onload = function () {
     })
 
     $('#mbf-player-gtcount').html("Game Types (" + data.gt_count + ")");
-    $("#mbf-player-gts").empty();
+    $("#mbf-player-gametypes").empty();
     data.game_types.forEach((gt) => {
         $("#mbf-player-gts").append(
             '<div class="col-md-3"><div class="card" style="margin-bottom:16px;"><div class="card"><div class="card-body"><h5 class="card-title">' +
