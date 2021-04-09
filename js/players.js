@@ -42,6 +42,36 @@ infoRequest.onload = function () {
             '</td></tr>'
         );
     })
+
+    $('#mbf-player-mapcount').html("Maps (" + data.map_count + ")");
+    $("#mbf-player-maps").empty();
+    data.maps.forEach((map) => {
+        $("#mbf-player-maps").append(
+            '<div class="col-md-3"><div class="card" style="margin-bottom:16px;"><div class="card"><img class="card-img-top" src="' + 
+            map.image +
+            '"><div class="card-body"><h5 class="card-title">' +
+            map.name +
+            '</h5><p class="card-text">' + 
+            map.description.replace(/(?:\r\n|\r|\n)/g, '<br>') + 
+            '</p><a href="/map.html?id=' +
+            map.id + 
+            '" class="card-link">Details...</a></div></div></div></div>'
+        );
+    })
+
+    $('#mbf-player-gtcount').html("Game Types (" + data.gt_count + ")");
+    $("#mbf-player-gts").empty();
+    data.game_types.forEach((gt) => {
+        $("#mbf-player-gts").append(
+            '<div class="col-md-3"><div class="card" style="margin-bottom:16px;"><div class="card"><div class="card-body"><h5 class="card-title">' +
+            gt.name +
+            '</h5><p class="card-text">' + 
+            gt.description.replace(/(?:\r\n|\r|\n)/g, '<br>') + 
+            '</p><a href="/gametype.html?id=' +
+            gt.id + 
+            '" class="card-link">Details...</a></div></div></div></div>'
+        );
+    })
 }
 
 function loadPlayer(id)
