@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="MadBomber.NET - Repository">
     <meta name="author" content="RFX">
-    <script src="js/match.js"></script>
-    <title>MadBomber.NET - Match</title>
+    <script src="js/servers.js"></script>
+    <title>MadBomber.NET - Server</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
@@ -24,7 +24,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/servers.html">Server List</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/repo.html">Repository</a>
           </li>
         </ul>
@@ -33,66 +33,74 @@
 
     <main role="main" class="container" style="margin-top:65px">
         <div class="row">
-            <div class="col-6">
-                <h1 id="mbf-match-title">Loading...</h1>
+            <div class="col-md">
+                <h1 id="mbf-server-name">Loading...</h1>
+                <div id="mbf-server-online" style="font-size:18px;">Unknown</div>
+                
             </div>
         </div>
+        <hr />
         <div class="row">
             <div class="col-md-6">
+                <h2>Info</h2>
                 <table class="table table-sm">
                     <tbody>
                         <tr>
-                            <th scope="row">Timestamp</th>
-                            <td id="mbf-match-timestamp">...</td>
+                            <th scope="row">Owner</th>
+                            <td id="mbf-server-owner">...</td>
                         </tr>
                         <tr>
-                            <th scope="row">Playtime</th>
-                            <td id="mbf-match-playtime">...</td>
+                            <th scope="row">Registered Since</th>
+                            <td id="mbf-server-registertime">...</td>
                         </tr>
                         <tr>
-                            <th scope="row">Winner</th>
-                            <td id="mbf-match-winner">...</td>
+                            <th scope="row">Endpoint</th>
+                            <td id="mbf-server-endpoint">...</td>
                         </tr>
                         <tr>
-                            <th scope="row">Map</th>
-                            <td id="mbf-match-map">...</td>
+                            <th scope="row">Client Version</th>
+                            <td id="mbf-server-clientversion">...</td>
                         </tr>
                         <tr>
-                            <th scope="row">Game Type</th>
-                            <td id="mbf-match-gametype">...</td>
+                            <th scope="row">Players</th>
+                            <td id="mbf-server-players">...</td>
                         </tr>
                         <tr>
-                            <th scope="row">Server</th>
-                            <td id="mbf-match-server">...</td>
+                            <th scope="row">Trust Requirement</th>
+                            <td id="mbf-server-trustrequirement">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Lobby Status</th>
+                            <td id="mbf-server-status">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Map Count</th>
+                            <td id="mbf-server-mapcount">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Game Type Count</th>
+                            <td id="mbf-server-gametypecount">...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Region</th>
+                            <td id="mbf-server-region">...</td>
                         </tr>
                     </tbody>
-                </table>
+                  </table>
             </div>
             <div class="col-md-6">
-                <table class="table table-sm">
+                <h2>Recent Matches</h2>
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Time</th>
-                            <th scope="col">Kills</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Player Count</th>
+                            <th scope="col">Playtime</th>
                         </tr>
                     </thead>
-                    <tbody id="mbf-match-kills">
-                        
-                    </tbody>
+                    <tbody id="mbf-server-matches"></tbody>
                 </table>
             </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-md">
-                <h1>Players</h1>
-            </div>
-        </div>
-        <div class="row" id="mbf-match-players">
-            
-        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -100,8 +108,8 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        loadMatch(urlParams.get('id'));
+        loadRecent();
+        loadRecentGT();
     </script>
   </body>
 </html>
