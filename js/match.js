@@ -4,7 +4,7 @@ infoRequest.onload = function () {
     var data = JSON.parse(this.response)
     document.title = "MadBomber.NET - Match#" + data.id;
     $("#mbf-match-title").html("Match#" + data.id);
-    $("#mbf-match-timestamp").html(new Date(data.timestamp).toString());
+    $("#mbf-match-timestamp").html(new Date(data.timestamp).toLocaleString());
     $("#mbf-match-playtime").html(data.playtime + " sec.");
     $("#mbf-match-winner").html('<a href="/player.html?id=' + data.winner_id + '">' + escapeHtml(data.winner_name) + '</a>');
     $("#mbf-match-map").html('<a href="/map.html?id=' + data.map_id + '">' + escapeHtml(data.map_name) + '</a>');
