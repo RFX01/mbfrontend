@@ -5,16 +5,18 @@ serverListRequest.onload = function () {
     data.forEach((server) => {
         serverCount++;
         $("#mbf-server-list").append(
-            '<tr><th scope="row">' + 
+            "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/server.html?id=" +
+            server.id +
+            '\'"><th scope="row">' + 
             server.name + 
             '</th><td>' + 
             server.region + 
             '</td><td>' + 
             server.lobby_state + 
             '</td><td>' + 
-            server.map_count + 
+            server.trust_requirement + 
             '</td><td>' + 
-            server.game_type_count + 
+            server.client_version + 
             '</td><td>' + 
             server.current_players + '/' + server.max_players +
             '</td></tr>'
