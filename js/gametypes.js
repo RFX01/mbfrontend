@@ -28,9 +28,9 @@ function drawRecentGT()
     recentGameTypes.forEach((gt) => {
         $("#mbf-recent-gts").append(
             '<div class="col-md-3"><div class="card" style="margin-bottom:16px;"><div class="card"><div class="card-body"><h5 class="card-title">' +
-            gt.name +
+            escapeHtml(gt.name) +
             '</h5><p class="card-text">' + 
-            gt.description.replace(/(?:\r\n|\r|\n)/g, '<br>') + 
+            escapeHtml(gt.description).replace(/(?:\r\n|\r|\n)/g, '<br>') + 
             '</p><a href="/gametype.html?id=' +
             gt.id + 
             '" class="card-link">Details...</a></div></div></div></div>'
@@ -43,13 +43,13 @@ var gtInfoRequest = new XMLHttpRequest();
 gtInfoRequest.onload = function () {
     var data = JSON.parse(this.response)
     document.title = "MadBomber.NET - " + data.name;
-    $("#mbf-gt-name").html(data.name);
+    $("#mbf-gt-name").html(escapeHtml(data.name));
     $("#mbf-gt-filesize").html(data.meta.file_size + " Byte");
     $('#mbf-gt-uuid').html(data.uuid);
     $('#mbf-gt-checksum').html("SHA256: " + data.checksum);
     $('#mbf-gt-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.xml + '\'">Download v' + data.version + '</button>');
-    $("#mbf-gt-description").html(data.description.replace(/(?:\r\n|\r|\n)/g, '<br>'));
-    $('#mbf-gt-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
+    $("#mbf-gt-description").html(escapeHtml(data.description).replace(/(?:\r\n|\r|\n)/g, '<br>'));
+    $('#mbf-gt-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + escapeHtml(data.creator_name) + '</a>');
     $('#mbf-gt-playcount').html(data.play_count);
     $('#mbf-gt-playtime').html(data.cumulative_playtime + " hrs.");
     $('#mbf-gt-timestamp').html(new Date(data.timestamp).toString());

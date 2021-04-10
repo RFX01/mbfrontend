@@ -6,10 +6,10 @@ infoRequest.onload = function () {
     $("#mbf-match-title").html("Match#" + data.id);
     $("#mbf-match-timestamp").html(new Date(data.timestamp).toString());
     $("#mbf-match-playtime").html(data.playtime + " sec.");
-    $("#mbf-match-winner").html('<a href="/player.html?id=' + data.winner_id + '">' + data.winner_name + '</a>');
-    $("#mbf-match-map").html('<a href="/map.html?id=' + data.map_id + '">' + data.map_name + '</a>');
-    $("#mbf-match-gametype").html('<a href="/gametype.html?id=' + data.game_type_id + '">' + data.game_type_name + '</a>');
-    $("#mbf-match-server").html('<a href="/server.html?id=' + data.server_id + '">' + data.server_name + '</a>');
+    $("#mbf-match-winner").html('<a href="/player.html?id=' + data.winner_id + '">' + escapeHtml(data.winner_name) + '</a>');
+    $("#mbf-match-map").html('<a href="/map.html?id=' + data.map_id + '">' + escapeHtml(data.map_name) + '</a>');
+    $("#mbf-match-gametype").html('<a href="/gametype.html?id=' + data.game_type_id + '">' + escapeHtml(data.game_type_name) + '</a>');
+    $("#mbf-match-server").html('<a href="/server.html?id=' + data.server_id + '">' + escapeHtml(data.server_name) + '</a>');
     counter = 0;
     data.kills.forEach((kill) => {
         counter++;
@@ -17,13 +17,13 @@ infoRequest.onload = function () {
         kill.timestamp + " sec."+
         '</td><th scope="row">';
         var endString = '</th><td>&#8594;</td><th scope="row">' + 
-        '<a href="/player.html?id=' + kill.killed_id + '">' + kill.killed_name + '</a>' +
+        '<a href="/player.html?id=' + kill.killed_id + '">' + escapeHtml(kill.killed_name) + '</a>' +
         '</th></tr>';
         if (kill.killer_id == null)
         {
             $('#mbf-match-kills').append(
                 startString + 
-                kill.killer_name +
+                escapeHtml(kill.killer_name) +
                 endString
             );
         }
@@ -31,7 +31,7 @@ infoRequest.onload = function () {
         {
             $('#mbf-match-kills').append(
                 startString + 
-                '<a href="/player.html?id=' + kill.killer_id + '">' + kill.killer_name + '</a>' +
+                '<a href="/player.html?id=' + kill.killer_id + '">' + escapeHtml(kill.killer_name) + '</a>' +
                 endString
             );
         }
@@ -42,7 +42,7 @@ infoRequest.onload = function () {
         counter++
         $('#mbf-match-players').append(
             '<div class="col-md-4"><div class="card" style="margin-bottom:16px;"><div class="card-header">' + 
-            '<a href="/player.html?id=' + player.id + '">' + player.name + '</a>' +
+            '<a href="/player.html?id=' + player.id + '">' + escapeHtml(player.name) + '</a>' +
             '</div><ul class="list-group list-group-flush"><li class="list-group-item pt-1 pb-1"><b>Kills </b><p class="mb-0 float-right">' +
             player.kills + 
             '</p></li><li class="list-group-item pt-1 pb-1"><b>Deaths </b><p class="mb-0 float-right">' +

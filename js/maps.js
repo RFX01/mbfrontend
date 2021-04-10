@@ -33,7 +33,7 @@ function drawRecent()
             '"><div class="card-body"><h5 class="card-title">' +
             map.name +
             '</h5><p class="card-text">' + 
-            map.description.replace(/(?:\r\n|\r|\n)/g, '<br>') + 
+            escapeHtml(map.description).replace(/(?:\r\n|\r|\n)/g, '<br>') + 
             '</p><a href="/map.html?id=' +
             map.id + 
             '" class="card-link">Details...</a></div></div></div></div>'
@@ -51,22 +51,22 @@ function setImgHeight()
 var infoRequest = new XMLHttpRequest();
 infoRequest.onload = function () {
     var data = JSON.parse(this.response)
-    document.title = "MadBomber.NET - " + data.name;
-    $("#mbf-map-name").html(data.name);
+    document.title = "MadBomber.NET - " + escapeHtml(data.name);
+    $("#mbf-map-name").html(escapeHtml(data.name));
     $('#mbf-map-uuid').html(data.uuid);
     $('#mbf-map-checksum').html("SHA256: " + data.checksum);
     $('#mbf-map-download').html('<button type="button" class="btn btn-primary btn-block" onclick="location.href=\'' + data.mbm + '\'">Download v' + data.version + '</button>');
-    $("#mbf-map-description").html(data.description.replace(/(?:\r\n|\r|\n)/g, '<br>'));
-    $('#mbf-map-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
+    $("#mbf-map-description").html(escapeHtml(data.description).replace(/(?:\r\n|\r|\n)/g, '<br>'));
+    $('#mbf-map-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + escapeHtml(data.creator_name) + '</a>');
     $('#mbf-map-playcount').html(data.play_count);
     $('#mbf-map-playtime').html(data.cumulative_playtime + " hrs.");
     if (data.game_type_id != null)
     {
-        $('#mbf-map-gtlink').html('<a href="/gametype.html?id=' + data.game_type_id + '">' + data.game_type_name + '</a>');
+        $('#mbf-map-gtlink').html('<a href="/gametype.html?id=' + data.game_type_id + '">' + escapeHtml(data.game_type_name) + '</a>');
     }
     else
     {
-        $('#mbf-map-gtlink').html(data.game_type_name);
+        $('#mbf-map-gtlink').html(escapeHtml(data.game_type_name));
     }
     $('#mbf-map-timestamp').html(new Date(data.timestamp).toString());
     $('#mbf-map-filesize').html(data.file_size + " Byte");
@@ -124,7 +124,7 @@ mpmRequest.onload = function () {
             "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/map.html?id=" +
             map.id +
             '\'"><th scope="row">' +
-            map.name + " (v" + map.version + ")" +
+            escapeHtml(map.name) + " (v" + map.version + ")" +
             '</th><td>' +
             map.hours_played + " hrs." +
             '</td><td>' +

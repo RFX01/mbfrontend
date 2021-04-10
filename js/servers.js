@@ -8,9 +8,9 @@ serverListRequest.onload = function () {
             "<tr style=\"cursor: pointer;\" onclick=\"window.location = '/server.html?id=" +
             server.id +
             '\'"><th scope="row">' + 
-            server.name + 
+            escapeHtml(server.name) + 
             '</th><td>' + 
-            server.region + 
+            escapeHtml(server.region) + 
             '</td><td>' + 
             server.lobby_state + 
             '</td><td>' + 
@@ -34,8 +34,8 @@ function loadServerList()
 var infoRequest = new XMLHttpRequest();
 infoRequest.onload = function () {
     var data = JSON.parse(this.response)
-    document.title = "MadBomber.NET - " + data.name;
-    $("#mbf-server-name").html(data.name);
+    document.title = "MadBomber.NET - " + escapeHtml(data.name);
+    $("#mbf-server-name").html(escapeHtml(data.name));
     if(data.online)
     {
         $('#mbf-server-online').attr("class", "text-success");
@@ -48,11 +48,11 @@ infoRequest.onload = function () {
     }
     if (data.owner_id == null)
     {
-        $('#mbf-server-owner').html(data.owner_name);
+        $('#mbf-server-owner').html(escapeHtml(data.owner_name));
     }
     else
     {
-        $('#mbf-server-owner').html('<a href="/player.html?id=' + data.owner_id + '">' + data.owner_name + '</a>');
+        $('#mbf-server-owner').html('<a href="/player.html?id=' + data.owner_id + '">' + escapeHtml(data.owner_name) + '</a>');
     }
     $('#mbf-server-registertime').html(new Date(data.register_time).toString());
     $('#mbf-server-endpoint').html(data.endpoint);
@@ -62,7 +62,7 @@ infoRequest.onload = function () {
     $('#mbf-server-status').html(data.status);
     $('#mbf-server-mapcount').html(data.map_count);
     $('#mbf-server-gametypecount').html(data.game_type_count);
-    $('#mbf-server-region').html(data.region);
+    $('#mbf-server-region').html(escapeHtml(data.region));
 
     data.recent_matches.forEach((match) => {
         $('#mbf-server-matches').append(
