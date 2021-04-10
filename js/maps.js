@@ -68,7 +68,7 @@ infoRequest.onload = function () {
     {
         $('#mbf-map-gtlink').html(data.game_type_name);
     }
-    $('#mbf-map-timestamp').html(data.timestamp);
+    $('#mbf-map-timestamp').html(new Date(data.timestamp).toString());
     $('#mbf-map-filesize').html(data.file_size + " Byte");
     $('#mbf-map-tilesize').html(data.tile_size);
     $('#mbf-map-spawns').html(data.spawns);

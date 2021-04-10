@@ -52,7 +52,7 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-creator').html('<a href="/player.html?id=' + data.creator_id + '">' + data.creator_name + '</a>');
     $('#mbf-gt-playcount').html(data.play_count);
     $('#mbf-gt-playtime').html(data.cumulative_playtime + " hrs.");
-    $('#mbf-gt-timestamp').html(data.timestamp);
+    $('#mbf-gt-timestamp').html(new Date(data.timestamp).toString());
     $('#mbf-gt-paintbomb').html(data.meta.paint_bomb);
     $('#mbf-gt-goalrush').html(data.meta.goal_rush);
     $('#mbf-gt-respawns').html(data.meta.respawns);

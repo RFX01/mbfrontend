@@ -39,7 +39,7 @@ infoRequest.onload = function () {
     if(data.online)
     {
         $('#mbf-server-online').attr("class", "text-success");
-        $('#mbf-server-online').html('Online <span class="text-dark" style="font-size:12px;">Since ' + data.online_since + '</span>');
+        $('#mbf-server-online').html('Online <span class="text-dark" style="font-size:12px;">Since ' + new Date(data.online_since).toString() + '</span>');
     }
     else
     {
@@ -54,7 +54,7 @@ infoRequest.onload = function () {
     {
         $('#mbf-server-owner').html('<a href="/player.html?id=' + data.owner_id + '">' + data.owner_name + '</a>');
     }
-    $('#mbf-server-registertime').html(data.register_time);
+    $('#mbf-server-registertime').html(new Date(data.register_time).toString());
     $('#mbf-server-endpoint').html(data.endpoint);
     $('#mbf-server-clientversion').html(data.client_version);
     $('#mbf-server-players').html(data.connected_players + " / <b>" + data.max_players + "</b>");

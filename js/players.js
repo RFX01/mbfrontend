@@ -14,8 +14,8 @@ infoRequest.onload = function () {
     $('#mbf-player-trustimg').attr('src', 'img/' + data.trust_rank + '.png');
     $('#mbf-player-trustscore').html("(" + data.trust_score + ")");
     $('#mbf-player-trustrank').append(data.trust_rank);
-    $('#mbf-player-registertime').html(data.register_time);
-    $('#mbf-player-lastactivity').html(data.last_activity);
+    $('#mbf-player-registertime').html(new Date(data.register_time).toString());
+    $('#mbf-player-lastactivity').html(new Date(data.last_activity).toString());
     $('#mbf-player-playcount').html(data.play_count);
     $('#mbf-player-playtime').html(secondsTimeSpanToHMS(data.cumulative_playtime));
     $('#mbf-player-submissions').html(data.submission_count + " / <b>" + data.submission_limit + "</b>");
