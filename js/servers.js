@@ -60,6 +60,9 @@ infoRequest.onload = function () {
     $('#mbf-server-players').html(data.connected_players + " / <b>" + data.max_players + "</b>");
     $('#mbf-server-trustrequirement').html(data.trust_requirement);
     $('#mbf-server-status').html(data.status);
+    $('#mbf-server-matchsaturation').html(data.match_saturation + "%");
+    $('#mbf-server-matchcount').html(data.match_count);
+    $('#mbf-server-playtime').html(data.cumulative_playtime + " hrs.");
     $('#mbf-server-mapcount').html(data.map_count);
     $('#mbf-server-gametypecount').html(data.game_type_count);
     $('#mbf-server-region').html(escapeHtml(data.region));
