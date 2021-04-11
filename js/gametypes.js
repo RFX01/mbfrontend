@@ -57,6 +57,7 @@ gtInfoRequest.onload = function () {
     $('#mbf-gt-goalrush').html(data.meta.goal_rush);
     $('#mbf-gt-respawns').html(data.meta.respawns);
     $('#mbf-gt-respawndelay').html(data.meta.respawn_delay + " sec.");
+    $('#mbf-gt-respawninvincibility').html(data.meta.respawn_invincibility + " sec.");
     $('#mbf-gt-timelimit').html(data.meta.time_limit + " min.");
     $('#mbf-gt-fixedspawns').html(data.meta.fixed_spawns);
     $('#mbf-gt-maploop').html(data.meta.map_loop);
