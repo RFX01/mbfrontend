@@ -1,0 +1,44 @@
+/* MadBomber Midnight Theme */
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.table {
+    color: #cccccc;
+}
+
+.table thead th, .table tbody td, .table tbody th {
+    border-color: #888888;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.bg-dark {
+    background-color: #1f1f1f !important;
+}
+
+mark {
+    background-color: #0a1653;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.card-header {
+    background-color: #1f1f1f;
+}
+
+.card {
+    border-color: #777777;
+    background-color: #000000;
+}
+
+.list-group-item, .card-body {
+    background-color: #000000;
+    border-color: #555555;
+}
