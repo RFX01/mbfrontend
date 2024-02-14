@@ -44,6 +44,22 @@ mark {
 }
 
 /* General Stuff */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        padding-bottom:0.45em;
+    }
+}
+
+.madbomber-logo {
+    filter: drop-shadow(0.4em 0.15em 0.3em #000000);
+}
 
 .uuid-section {
     text-align: right;
