@@ -79,7 +79,7 @@ infoRequest.onload = function () {
     $('#mbf-map-ms-triggers').html(data.map_script_triggers);
     $('#mbf-map-ms-commands').html(data.map_script_commands);
     $('#mbf-map-ms-variables').html(data.map_script_variables);
-    $("#mbf-map-image").html('<img id="mbf-map-element" class="mbf-mapimg d-block" src="' + data.image + '">');
+    $("#mbf-map-image").html('<img id="mbf-map-element" class="mbf-mapimg d-block mx-auto" src="' + data.image + '">');
     mapImage.src = data.image;
     mapImage.onload = setImgHeight;
     loadVersions(data.uuid);
