@@ -42,3 +42,24 @@ mark {
     background-color: #000000;
     border-color: #555555;
 }
+
+/* General Stuff */
+
+.uuid-section {
+    text-align: right;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .uuid-section {
+        text-align: left;
+    }
+
+    .uuid-text {
+        margin-left: 0.25em;
+    }
+
+    .uuid {
+        margin-bottom: 0.5em;
+    }
+}
