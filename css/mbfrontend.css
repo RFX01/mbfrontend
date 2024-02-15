@@ -9,11 +9,14 @@ body {
     color: #cccccc;
 }
 
-.table thead th, .table tbody td, .table tbody th {
+.table thead th,
+.table tbody td,
+.table tbody th {
     border-color: #888888;
 }
 
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
     background-color: #111111;
     color: #ffffff;
 }
@@ -38,12 +41,25 @@ mark {
     background-color: #000000;
 }
 
-.list-group-item, .card-body {
+.list-group-item,
+.card-body {
     background-color: #000000;
     border-color: #555555;
 }
 
 /* General Stuff */
+
+.mbf-mapimg {
+    width: 100%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .mbf-mapimg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -53,12 +69,13 @@ mark {
     .navbar-brand {
         display: flex;
         align-items: center;
-        padding-bottom:0.45em;
+        padding-bottom: 0.45em;
     }
 }
 
 .madbomber-logo {
     filter: drop-shadow(0.4em 0.15em 0.3em #000000);
+    image-rendering: pixelated;
 }
 
 .uuid-section {
