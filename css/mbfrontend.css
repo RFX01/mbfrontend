@@ -15,6 +15,10 @@ body {
     border-color: #888888;
 }
 
+.table tbody tr th {
+    border-right: 1px solid #444444;
+}
+
 .table-hover tbody tr:hover td,
 .table-hover tbody tr:hover th {
     background-color: #111111;
@@ -65,14 +69,6 @@ mark {
     align-items: center;
 }
 
-@media only screen and (min-width: 768px) {
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-        padding-bottom: 0.45em;
-    }
-}
-
 .madbomber-logo {
     filter: drop-shadow(0.4em 0.15em 0.3em #000000);
     image-rendering: pixelated;
@@ -83,16 +79,26 @@ mark {
     margin: 0px;
 }
 
+.repo-title {
+    text-align: left;
+}
+
 @media only screen and (max-width: 768px) {
     .uuid-section {
-        text-align: left;
-    }
-
-    .uuid-text {
-        margin-left: 0.25em;
+        text-align: center;
     }
 
     .uuid {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.25em;
+    }
+
+    .repo-title {
+        text-align: center;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.45em;
     }
 }
